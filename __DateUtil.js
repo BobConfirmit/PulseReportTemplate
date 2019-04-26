@@ -11,12 +11,15 @@ class DateUtil {
         var state = context.state;
         var log = context.log;
 
+        if(Filters.isTimePeriodFilterHidden(context)) {
+            return {};
+        }
+
         var selectedTimePeriod = ParamUtil.GetSelectedOptions(context, 'p_TimePeriod')[0];
         if (selectedTimePeriod) { // time period is defined
 
             var now: DateTime = DateTime.Now;
             var start: DateTime = new DateTime (2000, 1, 1);  // if no StartDate is specified, set it to 1 Jan,2000 to reliably include all possible historical responses
-
             var end: DateTime = now;//.AddDays(1);
 
             if(selectedTimePeriod.TimeUnit === 'Year') { // time period is defined in years

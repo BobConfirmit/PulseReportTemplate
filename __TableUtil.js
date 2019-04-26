@@ -144,9 +144,10 @@ class TableUtil{
 
     static function applyDateRangeFilterToHeader(context, headerDateQuestion) {
 
+        var log = context.log;
         var dateRange = DateUtil.defineDateRangeBasedOnFilters(context);
 
-        if(dateRange) {
+        if(dateRange['startDate'] && dateRange['endDate']) {
             headerDateQuestion.TimeSeries.StartDate = dateRange.startDate;
             headerDateQuestion.TimeSeries.EndDate = dateRange.endDate;
         }
