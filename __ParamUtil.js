@@ -94,7 +94,7 @@ class ParamUtil {
 
             for(var i=0; i<pid.length; i++) {
                 var val = new ParameterValueResponse();
-                val.StringValue = pname.length < pid.length? TextAndParameterUtil.getTextTranslationByKey(context, 'NoSurveyNameProvided') : pname[i].Precode;
+                val.StringValue = pname.length < pid.length && i>=pname.length ? TextAndParameterUtil.getTextTranslationByKey(context, 'NoSurveyNameProvided') : pname[i].Precode;
                 val.StringKeyValue = pid[i].Precode;
                 parameter.Items.Add(val);
             }
