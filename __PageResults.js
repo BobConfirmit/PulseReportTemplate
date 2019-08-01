@@ -422,8 +422,10 @@ class PageResults {
         var pageId = PageUtil.getCurrentPageIdInConfig(context);
         var bmColumn = 2; // 1st coulumn always exists - it's base
         var baseValues: Datapoint[] = report.TableUtils.GetColumnValues('Benchmarks',1);
+        log.LogDebug('PageResults.tableStatements_AddBenchmarkColumns_Banner0 after get column values of benchmarks: ' + DateTime.Now);
         var suppressValue = Config.SuppressSettings.TableSuppressValue;
         var benchmarkTableLabels = report.TableUtils.GetColumnHeaderCategoryTitles('Benchmarks');
+        log.LogDebug('PageResults.tableStatements_AddBenchmarkColumns_Banner0 after get categories titles of benchmarks: ' + DateTime.Now);
         var base: Datapoint;
 
         // !!!order of how bm cols are added must comply with bm table column order!!!
