@@ -406,12 +406,16 @@ class PageResults {
 
     static function tableStatements_AddBenchmarkColumns_Banner0 (context) {
 
+
         var log = context.log;
+
+        log.LogDebug('PageResults.tableStatements_AddBenchmarkColumns_Banner0 starting....: ' + DateTime.Now);
 
         if(!isBenchmarkAvailable(context)) {
             return;
         }
 
+        
         var report = context.report;
         var state = context.state;
         var table = context.table;
