@@ -475,6 +475,7 @@ class PageResults {
         //add hierarchy comparison benchmarks
         var hierCompCols = DataSourceUtil.getPagePropertyValueFromConfig(context, pageId, 'HierarchyBasedComparisons');
 
+        log.LogDebug('PageResults.tableStatements_AddBenchmarkColumns_Banner0 start cycle: ' + DateTime.Now);
         for(i=0; i<hierCompCols.length; i++) {
 
             var hierCompContent: HeaderContent = new HeaderContent();
@@ -495,6 +496,7 @@ class PageResults {
             //addScoreVsBenchmarkChart(context, 'col-1', 'hierComp');
             bmColumn +=1;
         }
+        log.LogDebug('PageResults.tableStatements_AddBenchmarkColumns_Banner0 end cycle: ' + DateTime.Now);
     }
 
     /**
